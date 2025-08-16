@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Longstays – Affitti transitori in Italia</title>
+  <meta name="description" content="Longstays: affitti transitori (1–18 mesi) per studenti e professionisti in Italia. Iscriviti alla lista d’attesa.">
+  <style>
+    :root { --max: 920px; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+      line-height: 1.5; color: #111; background: #fafafa;
+    }
+    header {
+      padding: 28px 20px;
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+    .logo { font-weight: 800; letter-spacing: 0.2px; font-size: 1.4rem; }
+    .badge { font-size: .75rem; padding: 2px 10px; background:#111; color:#fff; border-radius: 999px; display:inline-block; margin-left:8px;}
+    .hero {
+      padding: 32px 20px 10px;
+    }
+    .grid {
+      display: grid; gap: 22px;
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    h1 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); line-height: 1.15; margin: 0 0 12px; }
+    p.lead { font-size: 1.1rem; margin-top: 0; color:#333; }
+    .card {
+      background: #fff; border: 1px solid #e9e9e9; border-radius: 14px; padding: 18px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.03);
+    }
+    ul.check { margin: 10px 0 0 0; padding-left: 18px; }
+    ul.check li { margin: 6px 0; }
+    .muted { color:#666; font-size:.95rem; }
+    .cta { display:flex; gap: 10px; margin-top: 12px; }
+    input, button {
+      font: inherit;
+    }
+    input[type="email"] {
+      width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #d6d6d6;
+    }
+    button[type="submit"] {
+      padding: 12px 16px; border-radius: 10px; border: 1px solid #111; background:#111; color:#fff; cursor:pointer;
+    }
+    button[type="submit"]:hover { opacity:.9; }
+    .pill {
+      display:inline-block; padding: 6px 10px; border-radius: 999px; background:#eef6ff; color:#0b63ce; font-size:.85rem; font-weight:600;
+    }
+    .section { padding: 8px 20px 36px; }
+    footer { padding: 24px 20px 50px; color:#666; font-size:.9rem; }
+    a { color:#0b63ce; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="logo">Longstays <span class="badge">beta</span></div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero grid">
+      <div class="card">
+        <h1>Affitti transitori per studenti e professionisti in Italia</h1>
+        <p class="lead">La tua casa temporanea, più semplice da trovare. Soggiorni da <strong>1 a 18 mesi</strong> a Roma, Milano, Firenze e altre città.</p>
+        <p class="muted">We’re building a platform for medium &amp; long-term rentals in Italy. Join the waitlist:</p>
+        <form class="cta" method="post" action="mailto:info@longstays.it" enctype="text/plain">
+          <input type="email" name="email" placeholder="La tua email / Your email" required>
+          <button type="submit">Iscriviti / Join</button>
+        </form>
+        <p class="muted">Suggerimento: sostituisci <code>mailto:info@longstays.it</code> con un endpoint Formspree/Getform quando sarà pronto.</p>
+      </div>
+      <div class="card">
+        <div class="pill">Che cosa offriamo</div>
+        <ul class="check">
+          <li>Soluzioni selezionate per <strong>stays 1–18 mesi</strong></li>
+          <li>Case verificate e contratti chiari (modello ministeriale)</li>
+          <li>Supporto in <strong>italiano / inglese</strong></li>
+          <li>Per <strong>studenti, ricercatori e professionisti</strong></li>
+        </ul>
+        <hr>
+        <div class="pill">What you can expect</div>
+        <ul class="check">
+          <li>Curated homes for <strong>1–18 months</strong></li>
+          <li>Clear contracts and guidance</li>
+          <li>Italian / English support</li>
+          <li>For students, researchers and professionals</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="card">
+        <h2 style="margin-top:0">Affitto breve vs affitto transitorio (in breve)</h2>
+        <p><strong>Affitto breve:</strong> fino a 30 giorni, tipico per turismo; niente registrazione; cedolare secca 21%.</p>
+        <p><strong>Affitto transitorio:</strong> da 1 a 18 mesi, registrazione obbligatoria, motivazione di transitorietà, modelli ministeriali (art. 5 L. 431/98; D.M. 16/01/2017). Canone <em>libero</em> o, se si richiedono agevolazioni, entro i parametri degli accordi territoriali.</p>
+        <p class="muted">Short vs medium/long stays: short is up to 30 days (touristic). Transitory is 1–18 months with registration and specific legal framework in Italy.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    © 2025 Longstays.it · <a href="#">Privacy</a> · <a href="#">Contatti</a>
+  </footer>
+</body>
+</html>

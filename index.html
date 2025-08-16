@@ -1,64 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Longstays - Affitti Transitori</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Longstays – Affitti transitori 1–18 mesi</title>
+  <meta name="description" content="Affitti transitori per studenti e professionisti in Italia. Candidature proprietari e esempio di annuncio.">
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
 </head>
 <body>
+
+  <!-- HERO MINIMALE -->
   <header class="hero">
-    <img src="assets/logo.svg" alt="Longstays Logo" class="logo">
-    <h1>Affitti transitori semplici e sicuri</h1>
-    <p>La piattaforma dedicata a chi cerca e offre soluzioni di medio periodo</p>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <img src="assets/logo.svg" alt="Longstays" class="logo" />
+      <h1>Affitti transitori semplici e sicuri</h1>
+      <p>Soluzioni da <strong>1–18 mesi</strong> per studenti e professionisti</p>
+      <a href="#owners-form" class="btn">Proponi il tuo immobile</a>
+    </div>
   </header>
 
+  <!-- FEATURES -->
   <section class="features">
     <div class="feature">
       <span class="icon">🏡</span>
       <h3>Case curate</h3>
-      <p>Selezioniamo solo appartamenti verificati e pronti per soggiorni confortevoli.</p>
+      <p>Annunci selezionati e informazioni chiare.</p>
     </div>
     <div class="feature">
       <span class="icon">📅</span>
-      <h3>Durata flessibile</h3>
-      <p>Affitti da 1 a 18 mesi, per esigenze di studio, lavoro o trasferimenti.</p>
+      <h3>Durate flessibili</h3>
+      <p>Contratti transitori da 1 a 18 mesi.</p>
     </div>
     <div class="feature">
-      <span class="icon">✅</span>
+      <span class="icon">🛡️</span>
       <h3>Chiarezza legale</h3>
-      <p>Contratti conformi alla normativa italiana, senza sorprese.</p>
+      <p>Modelli ministeriali e guida pratica.</p>
     </div>
   </section>
 
-  <section class="cta">
+  <!-- ESEMPIO DI ANNUNCIO -->
+  <section class="listing-preview">
+    <h2>Esempio di annuncio</h2>
+    <div class="listing-card">
+      <img src="assets/principale.webp" alt="La Finestra Verde - Appartamento Roma" />
+      <div class="listing-info">
+        <h3>La Finestra Verde – Roma</h3>
+        <p>Accogliente appartamento transitorio nel cuore di Roma.</p>
+        <a class="btn ghost" href="annuncio.html">Vedi dettagli</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM PROPRIETARI -->
+  <section id="owners-form" class="cta">
     <h2>Sei un proprietario interessato?</h2>
-    <p>Compila il modulo qui sotto per proporre il tuo immobile.</p>
+    <p>Compila il modulo per proporre il tuo immobile.</p>
+    <!-- Sostituisci l'action con l’endpoint Formspree quando lo attivi -->
     <form action="mailto:owners@longstays.it" method="post" enctype="text/plain" class="form">
-      <input type="text" name="name" placeholder="Il tuo nome" required>
-      <input type="email" name="email" placeholder="La tua email" required>
+      <input type="text" name="name" placeholder="Il tuo nome" required />
+      <input type="email" name="email" placeholder="La tua email" required />
       <textarea name="message" placeholder="Descrivi brevemente il tuo appartamento" required></textarea>
       <button type="submit">Invia candidatura</button>
     </form>
   </section>
-<!-- Example Listing -->
-<section class="listing-preview">
-  <h2>Esempio di annuncio</h2>
-  <div class="listing-card">
-   <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2f9b?q=80&w=1200&auto=format&fit=crop"
-     alt="La Finestra Verde - Appartamento Roma">
-    <div class="listing-info">
-      <h3>La Finestra Verde - Roma</h3>
-      <p>Accogliente appartamento transitorio nel cuore di Roma.</p>
-      <a href="annuncio.html" class="btn">Vedi dettagli</a>
-    </div>
-  </div>
-</section>
+
   <footer>
-    <p>© 2025 Longstays - Tutti i diritti riservati</p>
+    <p>© 2025 Longstays – Tutti i diritti riservati</p>
   </footer>
 </body>
 </html>
-
-

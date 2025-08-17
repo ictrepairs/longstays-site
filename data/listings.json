@@ -1,0 +1,34 @@
+{
+  "la-finestra-verde-roma": {
+    "title": "La Finestra Verde",
+    "city": "Roma",
+    "address": "Viale Giuseppe Mazzini 144, Roma",
+    "type": "Appartamento",
+    "surface": 80,
+    "guests": 4,
+    "bedrooms": 2,
+    "baths": 1,
+    "priceUnit": "mensile",
+    "price": 3700,
+    "rules": ["Non fumatori", "No feste", "Animali su richiesta"],
+    "amenities": ["Wi-Fi", "Aria condizionata", "Cucina attrezzata", "Ascensore"],
+    "description": "Luminoso appartamento con affaccio interno, ideale per soggiorni 1–18 mesi.",
+    "cover": "assets/principale.webp",
+    "photos": [
+      "assets/principale.webp",
+      "assets/corridoio.webp",
+      "assets/cucina.webp",
+      "assets/facciata-retro.webp",
+      "assets/padronale1.webp",
+      "assets/padronale2.webp",
+      "assets/padronale3.webp",
+      "assets/soggiorno2.webp",
+      "assets/soggiorno3.webp"
+    ],
+    "map": "Viale%20Giuseppe%20Mazzini%20144%2C%20Roma",
+    "nearby": [
+      { "slug": "esempio-1", "title": "Bilocale Prati", "city": "Roma", "thumb": "assets/principale.webp", "price": 2200, "priceUnit": "mensile", "distanceKm": 1.2 },
+      { "slug": "esempio-2", "title": "Monolocale Vaticano", "city": "Roma", "thumb": "assets/principale.webp", "price": 1400, "priceUnit": "mensile", "distanceKm": 1.9 }
+    ]
+  }
+}

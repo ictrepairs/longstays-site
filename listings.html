@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="page-title">Annuncio • Longstays</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" height="28"> Longstays</a>
+    <a class="btn small" href="index.html#owners-form">Pubblica il tuo annuncio</a>
+  </header>
+
+  <main class="listing wrap">
+    <section id="gallery" class="gallery-grid"></section>
+
+    <section class="listing-head">
+      <div>
+        <h1 id="title"></h1>
+        <div class="muted" id="city"></div>
+      </div>
+      <div class="pricebox">
+        <div><span id="price"></span> <small id="priceUnit"></small></div>
+        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contatta</button>
+      </div>
+    </section>
+
+    <section class="facts card">
+      <div class="facts-grid">
+        <div>🏠 <span id="type"></span> • <span id="surface"></span> m²</div>
+        <div>👥 <span id="guests"></span> ospiti</div>
+        <div>🛏️ <span id="bedrooms"></span> camere</div>
+        <div>🛁 <span id="baths"></span> bagni</div>
+      </div>
+    </section>
+
+    <section class="desc-grid">
+      <article class="card">
+        <h2>Descrizione</h2>
+        <p id="description"></p>
+        <h3>Dotazioni</h3>
+        <ul id="amenities"></ul>
+        <h3>Regole</h3>
+        <ul id="rules"></ul>
+      </article>
+      <aside class="card">
+        <h2>Disponibilità</h2>
+        <input id="from" type="date"> → <input id="to" type="date">
+        <p class="muted small">Richieste 1–18 mesi. La disponibilità effettiva viene confermata dal proprietario.</p>
+        <div id="contact" class="card nested">
+          <h3>Contatta il proprietario</h3>
+          <form action="https://formspree.io/f/xxxxxx" method="POST">
+            <input name="name" placeholder="Nome" required>
+            <input name="email" type="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
+            <input type="hidden" name="listing" id="listingHidden">
+            <button class="btn" type="submit">Invia richiesta</button>
+          </form>
+          <p class="muted small">Se non hai ancora Formspree, usa <code>mailto:owners@longstays.it</code> nell'action.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card">
+      <h2>Posizione</h2>
+      <iframe id="map" width="100%" height="320" style="border:0" loading="lazy" allowfullscreen></iframe>
+    </section>
+
+    <section class="nearby">
+      <h2>Annunci nelle vicinanze</h2>
+      <div id="nearbyGrid" class="nearby-grid"></div>
+    </section>
+  </main>
+
+  <footer class="wrap muted small" style="padding:24px 0 60px">© 2025 Longstays</footer>
+
+<script>
+(async function(){
+  const params = new URLSearchParams(location.search);
+  const slug = params.get('slug') || 'la-finestra-verde-roma';
+
+  const res = await fetch('data/listings.json', {cache:'no-store'});
+  const data = await res.json();
+  const item = data[slug];
+  if(!item){ document.body.innerHTML = '<div style="padding:40px">Annuncio non trovato.</div>'; return; }
+
+  // head
+  document.getElementById('page-title').textContent = item.title + ' • Longstays';
+
+  // gallery
+  const g = document.getElementById('gallery');
+  item.photos.forEach(src => {
+    const img = document.createElement('img');
+    img.loading = 'lazy';
+    img.src = src;
+    img.alt = item.title;
+    g.appendChild(img);
+  });
+
+  // head+price
+  document.getElementById('title').textContent = item.title;
+  document.getElementById('city').textContent = item.city;
+  document.getElementById('price').textContent = new Intl.NumberFormat('it-IT', {style:'currency', currency:'EUR'}).format(item.price);
+  document.getElementById('priceUnit').textContent = 'al ' + item.priceUnit;
+
+  // facts
+  document.getElementById('type').textContent = item.type;
+  document.getElementById('surface').textContent = item.surface;
+  document.getElementById('guests').textContent = item.guests;
+  document.getElementById('bedrooms').textContent = item.bedrooms;
+  document.getElementById('baths').textContent = item.baths;
+
+  // text
+  document.getElementById('description').textContent = item.description;
+  document.getElementById('listingHidden').value = slug;
+
+  // lists
+  const ulA = document.getElementById('amenities');
+  item.amenities.forEach(a => { const li = document.createElement('li'); li.textContent = a; ulA.appendChild(li); });
+  const ulR = document.getElementById('rules');
+  item.rules.forEach(r => { const li = document.createElement('li'); li.textContent = r; ulR.appendChild(li); });
+
+  // map
+  const map = document.getElementById('map');
+  map.src = 'https://www.google.com/maps?q='+ item.map +'&output=embed';
+
+  // nearby
+  const ng = document.getElementById('nearbyGrid');
+  (item.nearby || []).forEach(n => {
+    const a = document.createElement('a');
+    a.className = 'nearby-card';
+    a.href = 'listing.html?slug=' + encodeURIComponent(n.slug);
+    a.innerHTML = `
+      <img src="${n.thumb}" alt="${n.title}">
+      <div>
+        <div class="nb-title">${n.title}</div>
+        <div class="nb-city muted small">${n.city} • ${n.distanceKm} km</div>
+        <div class="nb-price muted small">${new Intl.NumberFormat('it-IT', {style:'currency', currency:'EUR'}).format(n.price)} ${n.priceUnit}</div>
+      </div>`;
+    ng.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>

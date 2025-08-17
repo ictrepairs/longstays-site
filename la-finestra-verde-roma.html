@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Finestra Verde – Appartamento transitorio a Roma</title>
+  <meta name="description" content="La Finestra Verde, appartamento transitorio a Roma (1–18 mesi). Foto, descrizione, dotazioni e contatti.">
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <style>
+    /* mini fallback se qualche classe mancasse nello style.css */
+    .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid #eee;background:#fff;position:sticky;top:0;z-index:10}
+    .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:#111}
+    .btn{padding:10px 14px;border-radius:10px;border:1px solid #0f172a;background:#0f172a;color:#fff;text-decoration:none;cursor:pointer}
+    .btn.ghost{background:transparent;color:#0f172a}
+    .btn.ghost:hover{background:#0f172a;color:#fff}
+    .muted{color:#666}.small{font-size:.9rem}
+    .hero.small{height:40vh;background:#333 url('https://source.unsplash.com/1600x600/?rome') center/cover no-repeat;position:relative;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero.small .overlay{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+    .hero.small .hero-content{position:relative;z-index:1}
+    .listing{padding:20px 0}
+    .gallery{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+    .gallery img{width:calc(33.333% - 8px);min-width:240px;height:220px;object-fit:cover;border-radius:10px}
+    @media(max-width:800px){.gallery img{width:100%;min-width:auto}}
+    .card{background:#fff;border:1px solid #e9ebf0;border-radius:12px;padding:16px;margin:12px 0}
+    .desc-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:16px}
+    @media(max-width:900px){.desc-grid{grid-template-columns:1fr}}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    @media(max-width:800px){.facts{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+
+  <!-- top bar -->
+  <div class="topbar">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" height="28"> Longstays</a>
+    <a class="btn small" href="index.html#owners-form">Pubblica il tuo annuncio</a>
+  </div>
+
+  <!-- hero -->
+  <header class="hero small">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 style="margin:0 0 6px">La Finestra Verde</h1>
+      <p class="muted">Viale Giuseppe Mazzini, Roma</p>
+      <p><a class="btn ghost" href="index.html">← Torna alla home</a></p>
+    </div>
+  </header>
+
+  <main class="wrap listing">
+    <!-- gallery -->
+    <div class="gallery">
+      <img src="assets/principale.webp" alt="Soggiorno principale">
+      <img src="assets/corridoio.webp" alt="Corridoio">
+      <img src="assets/cucina.webp" alt="Cucina">
+      <img src="assets/facciata%20retro.webp" alt="Facciata retro">
+      <img src="assets/padronale1.webp" alt="Camera padronale 1">
+      <img src="assets/padronale2.webp" alt="Camera padronale 2">
+      <img src="assets/padronale%203.webp" alt="Camera padronale 3">
+      <img src="assets/soggiorno%202.webp" alt="Soggiorno 2">
+      <img src="assets/soggiorno%203.webp" alt="Soggiorno 3">
+    </div>
+
+    <!-- intestazione + prezzo -->
+    <section class="card" style="display:flex;justify-content:space-between;align-items:end;gap:12px">
+      <div>
+        <h2 style="margin:0 0 6px">Appartamento transitorio</h2>
+        <div class="muted">Roma • 1–18 mesi • Contratto transitorio</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:1.6rem;font-weight:700">su richiesta</div>
+        <div class="muted small">mensile</div>
+      </div>
+    </section>
+
+    <!-- facts -->
+    <section class="card facts">
+      <div>🏠 80 m²</div>
+      <div>👥 4 ospiti</div>
+      <div>🛏️ 2 camere</div>
+      <div>🛁 1 bagno</div>
+    </section>
+
+    <!-- descrizione + contatti -->
+    <section class="desc-grid">
+      <article class="card">
+        <h3>Descrizione</h3>
+        <p>Luminoso appartamento con affaccio interno, ideale per studenti e professionisti in soggiorni medio-lunghi. Zona centrale, ben collegata (metro e bus), Wi-Fi e cucina attrezzata.</p>
+
+        <h3>Dotazioni</h3>
+        <ul>
+          <li>Wi-Fi</li>
+          <li>Aria condizionata</li>
+          <li>Cucina attrezzata</li>
+          <li>Ascensore</li>
+        </ul>
+
+        <h3>Regole</h3>
+        <ul>
+          <li>Non fumatori</li>
+          <li>No feste</li>
+          <li>Animali su richiesta</li>
+        </ul>
+      </article>
+
+      <aside class="card">
+        <h3>Disponibilità &amp; contatti</h3>
+        <!-- Se attivi Formspree, sostituisci l'action con il tuo endpoint -->
+        <form action="mailto:owners@longstays.it" method="post" enctype="text/plain" class="form" style="display:grid;gap:10px">
+          <input type="text" name="name" placeholder="Nome" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="Periodo richiesto e note" required></textarea>
+          <input type="hidden" name="listing" value="La Finestra Verde (Roma)">
+          <button class="btn" type="submit">Invia richiesta</button>
+        </form>
+        <p class="muted small" style="margin-top:8px">Suggerimento: usa Formspree per ricevere le richieste via HTTPS.</p>
+      </aside>
+    </section>
+
+    <!-- mappa -->
+    <section class="card">
+      <h3>Posizione</h3>
+      <iframe
+        src="https://www.google.com/maps?q=Viale%20Giuseppe%20Mazzini%20144%2C%20Roma&output=embed"
+        width="100%" height="320" style="border:0" loading="lazy" allowfullscreen>
+      </iframe>
+    </section>
+
+  </main>
+
+  <footer class="wrap muted small" style="padding:24px 0 60px">© 2025 Longstays</footer>
+</body>
+</html>
